@@ -1,0 +1,27 @@
+.right-nav-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100px;
+    background-color: gray;
+    border-left: 2px solid black;
+    border-radius: 5px;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        display: block;
+        padding: 8px 12px;
+        color: white;
+        text-decoration: none;
+    }
+
+    a:hover {
+        background-color: darkgray;
+    }
+}
