@@ -1,71 +1,49 @@
-const rightBtn = document.getElementById('rightBtn');
-const leftBtn = document.getElementById('leftBtn');
-const card1 = document.getElementById('card1');
-const card2 = document.getElementById('card2');
+function createCarousel(cardIds, leftBtnId, rightBtnId) {
+    const cards = cardIds.map(id => document.getElementById(id));
+    const leftBtn = document.getElementById(leftBtnId);
+    const rightBtn = document.getElementById(rightBtnId);
+    let current = 0;
 
-rightBtn.addEventListener('click', () => {
+     if (!leftBtn || !rightBtn || cards.some(c => c === null)) return;
 
-    card2.classList.remove('slide-out-right');
-    card2.classList.remove('slide-in-right');
+    function showCard(nextIndex, direction) {
+        const incoming = cards[nextIndex];
+        const outgoing = cards[current];
 
-    card1.classList.remove('slide-in-left');
-    card1.classList.add('slide-out-left');
+        incoming.style.transition = 'none';
+        incoming.style.transform = direction === 'right' ? 'translateX(100%)' : 'translateX(-100%)';
+        incoming.style.opacity = '0';
 
-    card2.classList.remove('hidden');
-    card2.classList.add('slide-in-right');
-});
+        incoming.offsetHeight;
 
-leftBtn.addEventListener('click', () => {
+        incoming.style.transition = '';
+        incoming.classList.remove('hidden');
+        incoming.classList.add('active');
+        incoming.style.transform = 'translateX(0)';
+        incoming.style.opacity = '1';
 
-    card1.classList.remove('slide-out-left');
-    card1.classList.remove('slide-in-left');
+        outgoing.classList.remove('active');
+        outgoing.classList.add('hidden');
+        outgoing.style.transform = direction === 'right' ? 'translateX(-100%)' : 'translateX(100%)';
+        outgoing.style.opacity = '0';
 
-    card2.classList.add('slide-out-right');
+        current = nextIndex;
+    }
 
-    card1.classList.add('slide-in-left');
-});
+    document.getElementById(rightBtnId).addEventListener('click', () => {
+        showCard((current + 1) % cards.length, 'right');
+    });
 
-// if (card1.hasAttribute('slide-out-left')) {
-//     leftBtn.addEventListener('click', () => {
-//         card2.classList.remove('slide-out-right');
-//         card2.classList.remove('slide-in-right');
+    document.getElementById(leftBtnId).addEventListener('click', () => {
+        showCard((current - 1 + cards.length) % cards.length, 'left');
+    });
+}
 
-//         card1.classList.remove('slide-in-left');
-//         card1.classList.add('slide-out-left');
+// Scene 1 Education (2 cards)
+createCarousel(['card1', 'card2'], 'leftBtn1', 'rightBtn1');
 
-//         card2.classList.remove('hidden');
-//         card2.classList.add('slide-in-right');
-//     });
-// }
-// else if (card1.hasAttribute('slide-in-left') || card1.hasAttribute('none')) {
-//     rightBtn.addEventListener('click', () => {
-//         card2.classList.remove('slide-out-right');
-//         card2.classList.remove('slide-in-right');
+// Scene 2 Projects (3 cards)
+createCarousel(['card3', 'card4', 'card5'], 'leftBtn2', 'rightBtn2');
 
-//         card1.classList.remove('slide-in-left');
-//         card1.classList.add('slide-out-left');
-
-//         card2.classList.remove('hidden');
-//         card2.classList.add('slide-in-right');
-//     });
-// }
-// else if (card2.hasAttribute('hidden') || card2.hasAttribute('slide-out-right')) {
-//     leftBtn.addEventListener('click', () => {
-//         card1.classList.remove('slide-out-left');
-//         card1.classList.remove('slide-in-left');
-
-//         card2.classList.add('slide-out-right');
-
-//         card1.classList.add('slide-in-left');
-//     });
-// }
-// else {
-//     leftBtn.addEventListener('click', () => {
-//         card1.classList.remove('slide-out-left');
-//         card1.classList.remove('slide-in-left');
-
-//         card2.classList.add('slide-out-right');
-
-//         card1.classList.add('slide-in-left');
-//     });
-// }
+// Scene 3 Work Experience (2 cards)
+createCarousel(['card6', 'card7'], 'leftBtn3', 'rightBtn3');

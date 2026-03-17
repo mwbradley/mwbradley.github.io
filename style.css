@@ -7,6 +7,12 @@ body {
     overflow: hidden;
 }
 
+button {
+    background: none;
+    border: none;
+    z-index: 2;
+}
+
 .right-nav-bar {
     display: flex;
     position: fixed;
@@ -59,7 +65,26 @@ body {
         padding: 8px;
         justify-content: center;
     }
+
+    a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: white;
+    }
 }
+
+.info-display.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.info-display.hidden {
+        opacity: 0;
+        transform: translateX(100%);
+    }
 
 .scene {
     display: flex;
@@ -73,27 +98,46 @@ body {
     overflow: hidden;
 }
 
-.hidden {
-    opacity: 0;
-    transform: translateX(100%);
+.right-arrow {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    right: 20%;
+    transform: translateY(-50%);
+    border-left: 50px solid black;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    cursor: pointer;
+    clip-path: polygon(
+        0% 0%,   /* top point */
+        100% 50%, /* right point */
+        0% 100%, /* bottom point */
+        0% 50%    /* left point */
+    )
 }
 
-.slide-out-left {
-    opacity: 0;
-    transform: translateX(-100%);
+.right-arrow:hover {
+    border-left-color: darkgray;
 }
 
-.slide-in-right {
-    opacity: 1;
-    transform: translateX(0);
+.left-arrow {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 20%;
+    transform: translateY(-50%);
+    border-right: 50px solid black;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    cursor: pointer;
+    clip-path: polygon(
+        100% 0%,   /* top point */
+        100% 50%, /* right point */
+        100% 100%, /* bottom point */
+        0% 50%    /* left point */
+    )
 }
 
-.slide-out-right {
-    opacity: 0;
-    transform: translateX(100%);
-}
-
-.slide-in-left {
-    opacity: 1;
-    transform: translateX(0%);
+.left-arrow:hover {
+    border-right-color: darkgray;
 }
