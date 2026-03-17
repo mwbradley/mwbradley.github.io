@@ -5,18 +5,40 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-    <header>
-        <h1>Michael Bradley</h1>
-        <nav class="right-nav-bar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="experience.html">Work Experience</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <h2>Education</h2>
+        <header>
+            <nav class="right-nav-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="experience.html">Work Experience</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="scene">
+                <div class="info-display" id="card1">
+                    <h1>Education</h1>
+                    <h2>Kansas State University</h2>
+                    <p>Bachelor of Science in Computer Science</p>
+                    <p>August 2023 - December 2026</p>
+                    <p>GPA: 3.149<span title="Unofficial GPA">*</span></p>
+                    <h3>Relevant Coursework</h3>
+                    <p>Object-Oriented Design, Implementation, and Testing</p>
+                    <p>Introduction to Algorithm Analysis</p>
+                    <p>Software Architecture and Design</p>
+                    <p>Data Structures</p>
+                </div>
+                <div class="info-display hidden" id="card2">
+                    <h1>Education</h1>
+                    <h2>Coffeyville Community College</h2>
+                    <p>Associates in Science</p>
+                    <p>August 2021 - May 2023</p>
+                    <p>GPA: 4.00</p>
+                </div>
+            </div>
+            <button id="leftBtn">Previous</button>
+            <button id="rightBtn">Next</button>
+        </header>
+        <script src="script.js" defer></script>
     </body>
 </html>

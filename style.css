@@ -1,12 +1,24 @@
+body {
+    background-image: url('images/kurp2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: auto;
+    height: 100vh;
+    overflow: hidden;
+}
+
 .right-nav-bar {
+    display: flex;
     position: fixed;
-    top: 0;
-    right: 0;
-    height: 100%;
+    right: 1%;
+    top: 50%; /*Moves it down*/
+    transform: translateY(-50%); /*Moves it up to be centered*/
     width: 100px;
-    background-color: gray;
-    border-left: 2px solid black;
+    height: auto;
+    align-items: center;
+    background-color: rgb(221, 221, 221);
     border-radius: 5px;
+    z-index: 1000;
 
     ul {
         list-style: none;
@@ -16,12 +28,72 @@
 
     a {
         display: block;
-        padding: 8px 12px;
-        color: white;
+        padding: 40px 12px;
+        color: rgb(0, 0, 0);
         text-decoration: none;
+        text-align: center;
     }
 
     a:hover {
         background-color: darkgray;
     }
+}
+
+.info-display {
+    display: flex;
+    position: absolute;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    flex-direction: column;
+    background-color: rgba(221, 221, 221, .40);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+
+    h1 {
+        text-align: center;
+        padding: 0;
+    }
+
+    p {
+        margin: 0;
+        padding: 8px;
+        justify-content: center;
+    }
+}
+
+.scene {
+    display: flex;
+    position: relative;
+    height: 80vh;        /* Slightly taller than the nav bar */
+    width: 50%;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 10vh;    /* Centers it vertically with equal space above and below */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.slide-out-left {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.slide-in-right {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-out-right {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.slide-in-left {
+    opacity: 1;
+    transform: translateX(0%);
 }
