@@ -1,21 +1,26 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
     <head>
-        <title>My Resume Website</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Work experience of Michael Bradley, including roles at DoorDash and Walmart.">
+        <title>Michael Bradley | Work Experience</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-    <header>
-        <nav class="right-nav-bar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="experience.html">Work Experience</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="scene">
+        <header>
+            <nav class="right-nav-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="experience.html" class="current" aria-current="page">Work Experience</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="scene">
                 <div class="info-display active" id="card6">
                     <h1>Work Experience</h1>
                     <h2>DoorDash, Inc</h2>
@@ -28,11 +33,10 @@
                     <p>Associate</p>
                     <p>February 2022 - January 2024</p>
                 </div>
-                
             </div>
-            <button class="left-arrow" id="leftBtn3"></button>
-            <button class="right-arrow" id="rightBtn3"></button>
-    </header>
+            <button class="left-arrow" id="leftBtn3" aria-label="Previous job"></button>
+            <button class="right-arrow" id="rightBtn3" aria-label="Next job"></button>
+        </main>
         <script src="script.js" defer></script>
     </body>
 </html>

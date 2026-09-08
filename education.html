@@ -1,7 +1,10 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
     <head>
-        <title>My Resume Website</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Education background of Michael Bradley, a Computer Science student at Kansas State University.">
+        <title>Michael Bradley | Education</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -9,19 +12,22 @@
             <nav class="right-nav-bar">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="education.html">Education</a></li>
+                    <li><a href="education.html" class="current" aria-current="page">Education</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="experience.html">Work Experience</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
+        </header>
+        <main>
             <div class="scene">
                 <div class="info-display active" id="card1">
                     <h1>Education</h1>
                     <h2>Kansas State University</h2>
                     <p>Bachelor of Science in Computer Science</p>
                     <p>August 2023 - December 2026</p>
-                    <p>GPA: 3.149<span title="Unofficial GPA">*</span></p>
+                    <p>GPA: 3.149<sup title="Unofficial GPA">*</sup></p>
+                    <p class="footnote">*Unofficial GPA</p>
                     <h3>Relevant Coursework</h3>
                     <p>Object-Oriented Design, Implementation, and Testing</p>
                     <p>Introduction to Algorithm Analysis</p>
@@ -36,9 +42,9 @@
                     <p>GPA: 4.00</p>
                 </div>
             </div>
-            <button class="left-arrow" id="leftBtn1"></button>
-            <button class="right-arrow" id="rightBtn1"></button>
-        </header>
-            <script src="script.js" defer></script>
+            <button class="left-arrow" id="leftBtn1" aria-label="Previous education entry"></button>
+            <button class="right-arrow" id="rightBtn1" aria-label="Next education entry"></button>
+        </main>
+        <script src="script.js" defer></script>
     </body>
 </html>
